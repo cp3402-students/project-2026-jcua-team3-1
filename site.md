@@ -15,3 +15,5 @@ Plugin‑specific processes
 
 
 Anything specific to this site’s organisation
+
+Test edit to check GitHub permissions
