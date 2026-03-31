@@ -1,0 +1,9 @@
+- name: Deploy to Lightsail via SSH
+  uses: appleboy/ssh-action@v1.0.3
+  with:
+    host: ${{ secrets.LIGHTSAIL_HOST }}
+    username: ${{ secrets.LIGHTSAIL_USER }}
+    key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+    script: |
+      cd /opt/bitnami/wordpress
+      git pull origin main
