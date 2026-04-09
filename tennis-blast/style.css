@@ -967,3 +967,73 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* =========================
+   CUSTOM HEADER NAVBAR
+========================= */
+
+body {
+    margin: 0;
+}
+
+/* HEADER CONTAINER */
+.site-header {
+    background: black;
+    width: 100%;
+    margin: 0;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* LOGO + SITE TITLE */
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-title {
+    margin: 0;
+}
+
+.site-title a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* NAVIGATION CENTER */
+.main-navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* MENU ITEMS */
+.main-navigation ul {
+    display: flex !important;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.main-navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-navigation a:hover {
+    text-decoration: underline;
+}
+
+/* LOGO */
+.custom-logo {
+    max-height: 80px;
+    width: auto;
+}
