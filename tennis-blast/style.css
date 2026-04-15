@@ -625,11 +625,27 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site-main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 3rem;
+}
+
+
+
 .wp-block-cover.alignfull .wp-block-cover__inner-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 3rem;
 }
+
+.hero-cover .wp-block-cover__inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
 
 @media (max-width: 768px) {
     .wp-block-cover.alignfull .wp-block-cover__inner-container {
