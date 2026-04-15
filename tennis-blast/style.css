@@ -722,6 +722,11 @@ textarea {
 }
 
 .page-content,
+
+.entry-title {
+    display: none;
+}
+
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
