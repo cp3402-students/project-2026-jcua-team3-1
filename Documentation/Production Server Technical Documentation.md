@@ -38,3 +38,14 @@ This document presents detailed technical information to support the redevelopme
 | Admin Credentials      | See System Administrator         |
 
 **Note:** SSL is not configured due to no hosting domain being used.
+
+
+
+
+### 2.2 Network and Security
+
+| Port | Protocol | Service       | Access Level | Description            |
+|------|----------|---------------|--------------|------------------------|
+| 22   | SSH      | Secure Shell  | Restricted   | Remote administration  |
+| 80   | HTTP     | Web Traffic   | Public       | Non-secure access      |
+| 443  | HTTPS    | Secure Web    | Public       | Encrypted SSL/TLS      |
