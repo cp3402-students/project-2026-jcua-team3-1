@@ -20,3 +20,21 @@ This document presents detailed technical information to support the redevelopme
 | Web Server          | Apache                 |
 | Programming Language| PHP, HTML, CSS, SCSS   |
 
+
+
+## 2. Infrastructure Used
+
+### 2.1 AWS LightSail Configuration
+
+| Configuration Item     | Details                          |
+|------------------------|----------------------------------|
+| AWS Region             | Sydney, Zone A (ap-southeast-2a) |
+| Instance Type          | General                          |
+| CPU                    | 2 vCPUs                          |
+| Memory                 | 2GB                              |
+| Storage                | 60GB SSD                         |
+| Networking             | Dual Stack                       |
+| Public/Private IPs     | See System Administrator         |
+| Admin Credentials      | See System Administrator         |
+
+**Note:** SSL is not configured due to no hosting domain being used.
