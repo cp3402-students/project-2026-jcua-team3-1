@@ -49,3 +49,16 @@ This document presents detailed technical information to support the redevelopme
 | 22   | SSH      | Secure Shell  | Restricted   | Remote administration  |
 | 80   | HTTP     | Web Traffic   | Public       | Non-secure access      |
 | 443  | HTTPS    | Secure Web    | Public       | Encrypted SSL/TLS      |
+
+
+
+### 2.3 WordPress LightSail Configuration
+
+| Configuration Item | Details                      |
+|------------------|------------------------------|
+| WordPress Version| 6.9.4                         |
+| Admin Access     | See System Administrator      |
+
+**Plugins Used:**
+- All-in-One WP Migration – Full backups  
+- Accessibility Widget by OneTap  
