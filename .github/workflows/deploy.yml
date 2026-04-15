@@ -9,19 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Get your code from GitHub
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - name: Setup gcloud
-        uses: google-github-actions/setup-gcloud@v2
-
-      - name: Deploy files
+      # 2. Setup SSH key for server access
+      - name: Setup SSH
         run: |
-          gcloud compute scp --recurse ./ \
-            wp-staging-server:/var/www/html/wp-content/themes/tennis-blast \
-            --zone us-east1-c
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.GCP_HOST }} >> ~/.ssh/known_hosts
+
+      # 3. Deploy files to your staging server
+      - name: Deploy files to server
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_rsa" \
+            ./ \
+            ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:/var/www/html/wp-content/themes/tennis-blast/
