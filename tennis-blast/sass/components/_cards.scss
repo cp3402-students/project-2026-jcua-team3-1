@@ -1,12 +1,10 @@
 .post,
 .page,
 .widget {
-  background: $color__background-screen; // white
-  border: 1px solid $color__border-input; // grey trim
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-
-  // soft shadow (optional but nice)
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	background: $color__background-screen;
+	border: 1px solid $color__border-input;
+	border-radius: 8px;
+	padding: 24px;
+	margin-bottom: 24px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }

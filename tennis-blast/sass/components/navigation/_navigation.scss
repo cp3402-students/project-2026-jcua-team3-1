@@ -1,3 +1,7 @@
+/* =========================
+   MAIN NAVIGATION
+========================= */
+
 .main-navigation {
 	flex: 1;
 	display: flex;
@@ -36,9 +40,33 @@
 		gap: 30px;
 	}
 
-	/* Dropdown menu only */
+	/* Dropdown arrow */
+	.menu-item-has-children > a,
+	.page_item_has_children > a {
+		position: relative;
+		padding-right: 26px;
+
+		&::after {
+			content: "▼";
+			font-size: 0.65rem;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: transform 0.2s ease, color 0.2s ease;
+		}
+	}
+
+	.menu-item-has-children:hover > a::after,
+	.menu-item-has-children:focus-within > a::after,
+	.page_item_has_children:hover > a::after,
+	.page_item_has_children:focus-within > a::after {
+		transform: translateY(-50%) rotate(180deg);
+		color: $color__accent;
+	}
+
+	/* Dropdown menu */
 	ul ul {
-		display: none;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -50,9 +78,16 @@
 		padding: 8px 0;
 		z-index: 99999;
 
+		display: flex;
 		flex-direction: column;
 		gap: 0;
 		align-items: stretch;
+
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(8px);
+		transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+		pointer-events: none;
 	}
 
 	ul ul li {
@@ -75,12 +110,17 @@
 		}
 	}
 
+	/* Show dropdown */
 	li:hover > ul,
 	li.focus > ul,
 	li:focus-within > ul {
-		display: flex;
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+		pointer-events: auto;
 	}
 
+	/* Current item */
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
@@ -89,7 +129,7 @@
 	}
 }
 
-/* Mobile menu */
+/* Mobile menu button */
 .menu-toggle {
 	display: block;
 	background: $color__accent;
@@ -106,6 +146,7 @@
 	}
 }
 
+/* Small screens */
 .main-navigation.toggled > div > ul,
 .main-navigation.toggled > ul {
 	display: block;
@@ -119,12 +160,15 @@
 
 .main-navigation.toggled ul ul {
 	position: static;
-	display: block;
+	opacity: 1;
+	visibility: visible;
+	transform: none;
 	box-shadow: none;
 	border: none;
 	border-radius: 0;
 	padding-left: 15px;
 	background: transparent;
+	pointer-events: auto;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -137,10 +181,11 @@
 		display: flex;
 	}
 }
+
+/* Post and comment navigation */
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 	}
