@@ -1,0 +1,35 @@
+.site-footer {
+  background: $color__footer;
+  color: $color__text-screen;
+  padding: 40px 20px 20px;
+}
+
+.site-footer a {
+  color: $color__accent;
+  text-decoration: none;
+
+  &:hover {
+    color: $color__accent-hover;
+  }
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid $color__border-input;
+  text-align: center;
+}
