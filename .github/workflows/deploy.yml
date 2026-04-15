@@ -2,7 +2,7 @@ name: Deploy WordPress Theme to GCP
 
 on:
   push:
-    branches: [main]
+    branches: [local-branch]
 
 jobs:
   deploy:
