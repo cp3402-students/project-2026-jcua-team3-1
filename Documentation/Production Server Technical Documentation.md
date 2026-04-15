@@ -62,3 +62,29 @@ This document presents detailed technical information to support the redevelopme
 **Plugins Used:**
 - All-in-One WP Migration – Full backups  
 - Accessibility Widget by OneTap  
+
+
+
+### 2.4 Github Synchronization (to configure for first-time use)
+
+- Retrieve admin username and SSH key and server IP address from AWS LightSail server.  
+- In the Github repository, open Secrets and Variables.  
+- Enter the following information under repository secrets:  
+  - `LIGHTSAIL_HOST`: HOST IP Address of LightSail server  
+  - `LIGHTSAIL_USER`: WordPress Admin username  
+  - `SSH`: The SSH key from the LightSail server  
+
+- Add a `deploy.yml` file to the repo and add the following:
+
+```yaml
+- name: Deploy to Lightsail via SSH
+  uses: appleboy/ssh-action@v1.0.3
+  with:
+    host: ${{ secrets.LIGHTSAIL_HOST }}
+    username: SEE System Administrator
+    key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+    script: |
+      cd /opt/bitnami/wordpress/wp-content/themes/tennis-club
+      git pull origin main
+
+      sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/tennis-club
