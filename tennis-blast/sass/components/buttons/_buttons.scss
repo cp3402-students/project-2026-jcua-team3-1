@@ -1,0 +1,15 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background: $color__accent;
+  color: #ffffff;
+  border: 1px solid $color__accent;
+  border-radius: 4px;
+  padding: 0.6em 1em;
+
+  &:hover {
+    background: $color__accent-hover;
+    border-color: $color__accent-hover;
+  }
+}
