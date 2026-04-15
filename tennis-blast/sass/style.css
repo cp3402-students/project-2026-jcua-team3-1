@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Lachlan Webb
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.2
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -630,9 +630,6 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-/* =========================
-   MAIN NAVIGATION
-========================= */
 .main-navigation {
   flex: 1;
   display: flex;
@@ -659,7 +656,7 @@ textarea {
   text-decoration: none;
 }
 .main-navigation {
-  /* Top level menu */
+  /* Top-level menu only */
 }
 .main-navigation > div > ul,
 .main-navigation > ul {
@@ -668,7 +665,7 @@ textarea {
   gap: 30px;
 }
 .main-navigation {
-  /* Dropdown menu */
+  /* Dropdown menu only */
 }
 .main-navigation ul ul {
   display: none;
@@ -682,11 +679,17 @@ textarea {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   padding: 8px 0;
   z-index: 99999;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
 }
 .main-navigation ul ul li {
   width: 100%;
+  display: block;
 }
 .main-navigation ul ul a {
+  display: block;
+  width: 100%;
   padding: 10px 16px;
   white-space: nowrap;
   color: #ffffff;
@@ -696,16 +699,10 @@ textarea {
   color: #ffffff;
   text-decoration: none;
 }
-.main-navigation {
-  /* Show dropdown */
-}
 .main-navigation li:hover > ul,
 .main-navigation li.focus > ul,
 .main-navigation li:focus-within > ul {
-  display: block;
-}
-.main-navigation {
-  /* Active/current menu item */
+  display: flex;
 }
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
@@ -714,7 +711,7 @@ textarea {
   color: #0a8f2c;
 }
 
-/* Mobile menu button */
+/* Mobile menu */
 .menu-toggle {
   display: block;
   background: #0a8f2c;
@@ -729,7 +726,6 @@ textarea {
   border-color: #43A047;
 }
 
-/* Small screens */
 .main-navigation.toggled > div > ul,
 .main-navigation.toggled > ul {
   display: block;
@@ -751,7 +747,6 @@ textarea {
   background: transparent;
 }
 
-/* Desktop */
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
@@ -761,7 +756,6 @@ textarea {
     display: flex;
   }
 }
-/* Post and comment navigation */
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -771,8 +765,6 @@ textarea {
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
