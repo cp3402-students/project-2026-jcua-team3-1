@@ -181,3 +181,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+function tennis_blast_footer_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Footer Sponsors', 'tennis-blast' ),
+        'id'            => 'footer-sponsors',
+        'description'   => __( 'Add sponsor logos here.', 'tennis-blast' ),
+        'before_widget' => '<div class="footer-sponsor-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'tennis_blast_footer_widgets_init' );
