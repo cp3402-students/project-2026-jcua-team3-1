@@ -63,8 +63,4 @@
 
 	</header><!-- #masthead -->
 
-	<?php if ( get_header_image() ) : ?>
-		<div class="custom-header">
-			<img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>">
-		</div>
-	<?php endif; ?>
+
