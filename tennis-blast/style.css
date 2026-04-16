@@ -1225,104 +1225,75 @@ textarea {
     padding: 8px;
 }
 
-/* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+/* Main page width */
+.wp-block-group {
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* Section spacing */
-h2, h3 {
-    margin-top: 30px;
-    margin-bottom: 10px;
+/* === TOP LAYOUT (Info + Form side by side) === */
+.wp-block-group:has(.wp-block-table):has(form) {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-/* Tables (Contact + Hours) */
-table {
+/* Left side (tables + text) */
+.wp-block-group .wp-block-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 25px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-table td, table th {
-    padding: 12px;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #222;
-    color: #fff;
-    text-align: left;
-}
-
-/* Contact Form Styling */
-form {
+/* Right side (form) */
+.wp-block-group form {
+    width: 100%;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
 }
 
-/* Inputs */
-input[type="text"],
-input[type="email"],
-textarea {
+/* Force form section to sit right */
+.wp-block-group:has(form) > *:not(form) {
+    flex: 1;
+}
+
+.wp-block-group:has(form) form {
+    flex: 1;
+}
+
+/* === BOTTOM LAYOUT (Sponsors + External Links) === */
+.wp-block-group:has(ul):has(a[href*="http"]) {
+    display: flex;
+    gap: 40px;
+}
+
+/* Each list column */
+.wp-block-group:has(ul):has(a[href*="http"]) ul {
+    flex: 1;
+}
+
+/* === FORM IMPROVEMENTS === */
+input, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
 }
 
-/* Textarea */
-textarea {
-    min-height: 120px;
-    resize: vertical;
+/* Try to put name fields side by side */
+.wp-block-group form p:has(input) {
+    display: flex;
+    gap: 15px;
 }
 
-/* Labels */
-label {
-    font-weight: bold;
-    display: block;
+.wp-block-group form p input {
+    flex: 1;
 }
 
-/* Submit Button */
-button,
-input[type="submit"] {
-    background-color: #1e7e34;
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
+/* === MOBILE FIX === */
+@media (max-width: 768px) {
+    .wp-block-group {
+        display: block !important;
+    }
 
-button:hover,
-input[type="submit"]:hover {
-    background-color: #155d27;
-}
-
-/* Sponsors & Links */
-ul {
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-a {
-    color: #0073aa;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    .wp-block-group form p:has(input) {
+        flex-direction: column;
+    }
 }
