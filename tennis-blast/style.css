@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Lachlan Webb, Jack Lean, Ben Chisnell, Terry Keenan-Warland
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.6
+Version: 1.0.7
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -626,184 +626,83 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+/* Preserve WordPress block editor / grid layouts */
+.wp-block-columns,
+.wp-block-group,
+.wp-block-cover__inner-container,
+.wp-block-column {
+	max-width: 100%;
+}
+
+.wp-block-columns.is-layout-flex,
+.wp-block-group.is-layout-flex,
+.wp-block-group.is-layout-grid,
+.wp-block-columns.is-layout-grid {
+	gap: inherit;
+}
+
+.wp-block-column {
+	min-width: 0;
+}
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-/* =========================
-   MAIN NAVIGATION
-========================= */
 .main-navigation {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 100%;
 }
 .main-navigation ul {
+  display: none;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
+}
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+.main-navigation ul ul a {
+  width: 200px;
+}
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
 }
 .main-navigation li {
   position: relative;
 }
 .main-navigation a {
   display: block;
-  padding: 10px 14px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.2s ease, background 0.2s ease;
-}
-.main-navigation a:hover, .main-navigation a:focus {
-  color: #0a8f2c;
   text-decoration: none;
 }
-.main-navigation {
-  /* Top-level menu only */
-}
-.main-navigation > div > ul,
-.main-navigation > ul {
-  display: none;
-  align-items: center;
-  gap: 30px;
-}
-.main-navigation {
-  /* Dropdown arrow */
-}
-.main-navigation .menu-item-has-children > a,
-.main-navigation .page_item_has_children > a {
-  position: relative;
-  padding-right: 26px;
-}
-.main-navigation .menu-item-has-children > a::after,
-.main-navigation .page_item_has_children > a::after {
-  content: "▼";
-  font-size: 0.65rem;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.main-navigation .menu-item-has-children:hover > a::after,
-.main-navigation .menu-item-has-children:focus-within > a::after,
-.main-navigation .page_item_has_children:hover > a::after,
-.main-navigation .page_item_has_children:focus-within > a::after {
-  transform: translateY(-50%) rotate(180deg);
-  color: #0a8f2c;
-}
-.main-navigation {
-  /* Dropdown menu */
-}
-.main-navigation ul ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 220px;
-  background: #000000;
-  border: 1px solid #bdbdbd;
-  border-radius: 6px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  padding: 8px 0;
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: stretch;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
-  pointer-events: none;
-}
-.main-navigation ul ul li {
-  width: 100%;
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
   display: block;
-}
-.main-navigation ul ul a {
-  display: block;
-  width: 100%;
-  padding: 10px 16px;
-  white-space: nowrap;
-  color: #ffffff;
-}
-.main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
-  background: #0a8f2c;
-  color: #ffffff;
-  text-decoration: none;
-}
-.main-navigation {
-  /* Show dropdown */
-}
-.main-navigation li:hover > ul,
-.main-navigation li.focus > ul,
-.main-navigation li:focus-within > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.main-navigation {
-  /* Current item */
-}
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-  color: #0a8f2c;
-}
-
-/* Mobile menu button */
-.menu-toggle {
-  display: block;
-  background: #0a8f2c;
-  color: #ffffff;
-  border: 1px solid #0a8f2c;
-  padding: 10px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.menu-toggle:hover, .menu-toggle:focus {
-  background: #43A047;
-  border-color: #43A047;
-}
-
-/* Small screens */
-.main-navigation.toggled > div > ul,
-.main-navigation.toggled > ul {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.main-navigation.toggled li {
-  width: 100%;
-}
-
-.main-navigation.toggled ul ul {
-  position: static;
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-  padding-left: 15px;
-  background: transparent;
-  pointer-events: auto;
 }
 
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
   }
-  .main-navigation > div > ul,
-  .main-navigation > ul {
+  .main-navigation ul {
     display: flex;
   }
 }
-/* Post and comment navigation */
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -842,6 +741,11 @@ textarea {
 }
 
 .page-content,
+
+.entry-title {
+    display: none;
+}
+
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
@@ -956,66 +860,6 @@ textarea {
   display: block;
 }
 
-/* Cards
---------------------------------------------- */
-.post,
-.page,
-.widget {
-  background: #ffffff;
-  border: 1px solid #bdbdbd;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* Header
---------------------------------------------- */
-/* =========================
-   HEADER
-========================= */
-.site-header {
-  background: #000000;
-  width: 100%;
-  margin: 0;
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.site-branding {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.site-title {
-  margin: 0;
-}
-
-.site-title a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-.site-title a:hover, .site-title a:focus {
-  color: #0a8f2c;
-  text-decoration: none;
-}
-
-.custom-logo {
-  max-height: 80px;
-  width: auto;
-}
-
-/* Footer
---------------------------------------------- */
 .site-footer {
   background: #012458;
   color: #ffffff;
@@ -1043,22 +887,6 @@ textarea {
   flex: 1;
   min-width: 220px;
 }
-
-
-.site-footer {
-  background: #012458;
-  color: #ffffff;
-  padding: 40px 20px 20px;
-}
-
-.site-footer a {
-  color: #0a8f2c;
-  text-decoration: none;
-}
-.site-footer a:hover {
-  color: #43A047;
-}
-
 
 .footer-bottom {
   margin-top: 20px;
@@ -1089,24 +917,17 @@ textarea {
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
-.screen-reader-text:focus {
-  background-color: #ffffff;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  clip-path: none;
-  color: #111111;
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 700;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .screen-reader-text:focus {
   background-color: #ffffff;
@@ -1114,7 +935,7 @@ textarea {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #ffffff;
+  color: #111111;
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
@@ -1157,4 +978,4 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
-}/*# sourceMappingURL=style.css.map */
+}
