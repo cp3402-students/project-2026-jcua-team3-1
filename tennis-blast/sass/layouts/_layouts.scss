@@ -1,0 +1,116 @@
+.wp-block-table table,
+.wp-block-table th,
+.wp-block-table td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+    padding: 8px;
+}
+
+
+/* ===== Page Container (ONLY PAGE 17) ===== */
+.entry-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1e1e1e;
+  line-height: 1.6;
+}
+
+/* ===== Section Titles ===== */
+.entry-content h2 {
+  background: #ffffff;
+  padding: 20px 24px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border-left: 6px solid #2e7d32;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  color: #2e7d32;
+  font-size: 20px;
+  clear: both;
+}
+
+/* ===== Paragraphs ===== */
+.entry-content p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* Subtitle-style first paragraph after heading */
+.entry-content h2 + p {
+  background: #ffffff;
+  padding: 16px 20px;
+  margin-top: -8px;
+  margin-bottom: 0;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== FIX: Squads / Age Groups spacing issue ===== */
+.entry-content p strong {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+/* ===== Lists ===== */
+.entry-content ul {
+  background: #ffffff;
+  padding: 16px 26px;
+  margin: 0 0 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.entry-content li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* ===== IMAGE (RIGHT SIDE DESKTOP LAYOUT) ===== */
+.wp-block-image {
+  float: right;
+  max-width: 420px;
+  margin: 10px 0 20px 24px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Image styling */
+.wp-block-image img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect */
+.wp-block-image img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* Clear float so sections don’t overlap */
+.entry-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Section spacing fix ===== */
+.entry-content h2:not(:first-child) {
+  scroll-margin-top: 20px;
+}
