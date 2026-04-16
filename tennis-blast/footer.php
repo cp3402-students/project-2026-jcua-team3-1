@@ -5,14 +5,6 @@
     </div>
 
     <div class="site-info">
-        <span class="sep"> | </span>
-        <?php
-        printf(
-            esc_html__( 'Theme: %1$s by %2$s.', 'tennis-blast' ),
-            'tennis-blast',
-            '<a href="http://underscores.me/">Team 3</a>'
-        );
-        ?>
     </div><!-- .site-info -->
 
 </footer><!-- #colophon -->
