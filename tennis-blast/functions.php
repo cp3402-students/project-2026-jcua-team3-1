@@ -46,6 +46,13 @@ function tennis_blast_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'block-templates' );
+	add_theme_support( 'appearance-tools' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -98,6 +105,17 @@ function tennis_blast_setup() {
 			'flex-width'  => true,
 			'flex-height' => true,
 		)
+	);
+
+	add_theme_support( 'custom-header', array(
+	'default-image'      => '',
+	'width'              => 1920,
+	'height'             => 600,
+	'flex-height'        => true,
+	'flex-width'         => true,
+	'header-text'        => false,
+	'uploads'            => true,
+		) 
 	);
 }
 add_action( 'after_setup_theme', 'tennis_blast_setup' );
@@ -181,3 +199,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+function tennis_blast_footer_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Footer Sponsors', 'tennis-blast' ),
+        'id'            => 'footer-sponsors',
+        'description'   => __( 'Add sponsor logos here.', 'tennis-blast' ),
+        'before_widget' => '<div class="footer-sponsor-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'tennis_blast_footer_widgets_init' );
