@@ -530,13 +530,13 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #0a8f2c;
+  color: #000000;
 }
 a:visited {
-  color: #0a8f2c;
+  color: #ffffff;
 }
 a:hover, a:focus, a:active {
-  color: #43A047;
+  color: #000000;
 }
 a:focus {
   outline: thin dotted;
@@ -554,7 +554,7 @@ input[type=submit] {
   border: 1px solid;
   border-color: #0a8f2c #0a8f2c #087522;
   border-radius: 3px;
-  background: #0a8f2c;
+  background: #000000;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
   padding: 0.6em 1em 0.4em;
@@ -656,7 +656,7 @@ textarea {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .main-navigation a:hover, .main-navigation a:focus {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 .main-navigation {
@@ -691,7 +691,7 @@ textarea {
 .main-navigation .page_item_has_children:hover > a::after,
 .main-navigation .page_item_has_children:focus-within > a::after {
   transform: translateY(-50%) rotate(180deg);
-  color: #0a8f2c;
+  color: #000000;
 }
 .main-navigation {
   /* Dropdown menu */
@@ -701,7 +701,7 @@ textarea {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #000000;
+  background: #009ad6;
   border: 1px solid #bdbdbd;
   border-radius: 6px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -729,7 +729,7 @@ textarea {
   color: #ffffff;
 }
 .main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
-  background: #0a8f2c;
+  background: #000000;
   color: #ffffff;
   text-decoration: none;
 }
@@ -751,15 +751,15 @@ textarea {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-  color: #0a8f2c;
+  color: #000000;
 }
 
 /* Mobile menu button */
 .menu-toggle {
   display: block;
-  background: #0a8f2c;
+  background: #000000;
   color: #ffffff;
-  border: 1px solid #0a8f2c;
+  border: 1px solid #000000;
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
@@ -975,7 +975,7 @@ textarea {
    HEADER
 ========================= */
 .site-header {
-  background: #000000;
+  background: #009ad6;
   width: 100%;
   margin: 0;
   padding: 15px 30px;
@@ -1005,7 +1005,7 @@ textarea {
   transition: color 0.2s ease;
 }
 .site-title a:hover, .site-title a:focus {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -1017,13 +1017,13 @@ textarea {
 /* Footer
 --------------------------------------------- */
 .site-footer {
-  background: #012458;
+  background: #009ad6;
   color: #ffffff;
   padding: 40px 20px 20px;
 }
 
 .site-footer a {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 .site-footer a:hover {
@@ -1057,9 +1057,9 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  border: 1px solid #0a8f2c;
+  border: 1px solid #000000;
   border-radius: 6px;
-  background: #0a8f2c;
+  background: #000000;
   color: #ffffff;
   line-height: 1;
   padding: 0.75em 1.2em;
@@ -1077,13 +1077,13 @@ input[type=submit]:focus {
 }
 
 .site-footer {
-  background: #012458;
+  background: #009ad6;
   color: #ffffff;
   padding: 40px 20px 20px;
 }
 
 .site-footer a {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 .site-footer a:hover {
