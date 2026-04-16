@@ -645,6 +645,19 @@ textarea {
   margin-bottom: 5em;
 }
 
+.p {
+  margin-bottom: 3em;
+}
+
+.wp-block-columns {
+	display: flex;
+	gap: 40px;
+}
+
+.wp-block-column {
+	flex: 1;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
