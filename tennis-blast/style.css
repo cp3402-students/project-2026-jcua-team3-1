@@ -1213,81 +1213,14 @@ textarea {
   margin-bottom: 1.5em;
 }/*# sourceMappingURL=style.css.map */
 
-/* Main container (your whole page) */
-.entry-content {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+.wp-block-table table,
+.wp-block-table th,
+.wp-block-table td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
 }
 
-/* Reset everything to span full width first */
-.entry-content > * {
-    grid-column: span 2;
-}
-
-/* === LEFT SIDE === */
-/* Contact Details */
-.entry-content > *:nth-child(1),
-.entry-content > *:nth-child(2) {
-    grid-column: 1;
-}
-
-/* Office Hours section */
-.entry-content > *:nth-child(3),
-.entry-content > *:nth-child(4),
-.entry-content > *:nth-child(5) {
-    grid-column: 1;
-}
-
-/* === RIGHT SIDE (FORM) === */
-/* Form section (adjust numbers if needed) */
-.entry-content > *:nth-child(6),
-.entry-content > *:nth-child(7),
-.entry-content > *:nth-child(8),
-.entry-content > *:nth-child(9),
-.entry-content > *:nth-child(10) {
-    grid-column: 2;
-}
-
-/* Style the form box */
-.entry-content form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* === BOTTOM SECTION === */
-/* Sponsors + External Links full width */
-.entry-content > *:nth-child(n+11) {
-    grid-column: span 2;
-}
-
-/* Make bottom lists 2 columns */
-.entry-content > *:nth-child(n+11) ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* === FORM FIELDS === */
-input, textarea {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-/* === MOBILE === */
-@media (max-width: 768px) {
-    .entry-content {
-        grid-template-columns: 1fr;
-    }
-
-    .entry-content > * {
-        grid-column: span 1 !important;
-    }
-
-    .entry-content > *:nth-child(n+11) ul {
-        grid-template-columns: 1fr;
-    }
+.wp-block-table th,
+.wp-block-table td {
+    padding: 8px;
 }
