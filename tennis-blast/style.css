@@ -1212,3 +1212,15 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }/*# sourceMappingURL=style.css.map */
+
+.wp-block-table table,
+.wp-block-table th,
+.wp-block-table td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+    padding: 8px;
+}
