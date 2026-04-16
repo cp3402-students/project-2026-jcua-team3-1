@@ -46,6 +46,13 @@ function tennis_blast_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'block-templates' );
+	add_theme_support( 'appearance-tools' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
