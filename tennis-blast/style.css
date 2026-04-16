@@ -530,13 +530,13 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #0a8f2c;
+  color: #000000;
 }
 a:visited {
-  color: #0a8f2c;
+  color: #000000;
 }
 a:hover, a:focus, a:active {
-  color: #43A047;
+  color: #000000;
 }
 a:focus {
   outline: thin dotted;
@@ -691,7 +691,7 @@ textarea {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .main-navigation a:hover, .main-navigation a:focus {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 .main-navigation {
@@ -726,7 +726,7 @@ textarea {
 .main-navigation .page_item_has_children:hover > a::after,
 .main-navigation .page_item_has_children:focus-within > a::after {
   transform: translateY(-50%) rotate(180deg);
-  color: #0a8f2c;
+  color: #000000;
 }
 .main-navigation {
   /* Dropdown menu */
@@ -764,7 +764,7 @@ textarea {
   color: #ffffff;
 }
 .main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
-  background: #0a8f2c;
+  background: #000000;
   color: #ffffff;
   text-decoration: none;
 }
@@ -786,7 +786,7 @@ textarea {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-  color: #0a8f2c;
+  color: #000000;
 }
 
 /* Mobile menu button */
@@ -1013,14 +1013,22 @@ textarea {
 
 /* Header
 --------------------------------------------- */
+
+.custom-header img {
+	width: 100%;
+	height: 600px;
+	object-fit: cover;
+	display: block;
+}
+
 /* =========================
    HEADER
 ========================= */
 .site-header {
-  background: #000000;
+  background: #009bd6;
   width: 100%;
   margin: 0;
-  padding: 15px 30px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1036,18 +1044,18 @@ textarea {
 }
 
 .site-title {
-  margin: 0;
+  display:  none;
 }
 
 .site-title a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   transition: color 0.2s ease;
 }
 .site-title a:hover, .site-title a:focus {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -1058,19 +1066,6 @@ textarea {
 
 /* Footer
 --------------------------------------------- */
-.site-footer {
-  background: #012458;
-  color: #ffffff;
-  padding: 40px 20px 20px;
-}
-
-.site-footer a {
-  color: #0a8f2c;
-  text-decoration: none;
-}
-.site-footer a:hover {
-  color: #43A047;
-}
 
 .footer-container {
   max-width: 1200px;
@@ -1094,17 +1089,17 @@ textarea {
 }
 
 .site-footer {
-  background: #012458;
+  background: #009bd6;
   color: #ffffff;
   padding: 40px 20px 20px;
 }
 
 .site-footer a {
-  color: #0a8f2c;
+  color: #000000;
   text-decoration: none;
 }
 .site-footer a:hover {
-  color: #43A047;
+  color: #000000;
 }
 
 .footer-container {

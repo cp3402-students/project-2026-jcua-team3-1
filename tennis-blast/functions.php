@@ -106,6 +106,17 @@ function tennis_blast_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_theme_support( 'custom-header', array(
+	'default-image'      => '',
+	'width'              => 1920,
+	'height'             => 600,
+	'flex-height'        => true,
+	'flex-width'         => true,
+	'header-text'        => false,
+	'uploads'            => true,
+		) 
+	);
 }
 add_action( 'after_setup_theme', 'tennis_blast_setup' );
 
