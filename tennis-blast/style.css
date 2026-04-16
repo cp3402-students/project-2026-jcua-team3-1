@@ -1213,87 +1213,81 @@ textarea {
   margin-bottom: 1.5em;
 }/*# sourceMappingURL=style.css.map */
 
-.wp-block-table table,
-.wp-block-table th,
-.wp-block-table td {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-}
-
-.wp-block-table th,
-.wp-block-table td {
-    padding: 8px;
-}
-
-/* Main page width */
-.wp-block-group {
+/* Main container (your whole page) */
+.entry-content {
     max-width: 1100px;
     margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
-/* === TOP LAYOUT (Info + Form side by side) === */
-.wp-block-group:has(.wp-block-table):has(form) {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+/* Reset everything to span full width first */
+.entry-content > * {
+    grid-column: span 2;
 }
 
-/* Left side (tables + text) */
-.wp-block-group .wp-block-table {
-    width: 100%;
+/* === LEFT SIDE === */
+/* Contact Details */
+.entry-content > *:nth-child(1),
+.entry-content > *:nth-child(2) {
+    grid-column: 1;
 }
 
-/* Right side (form) */
-.wp-block-group form {
-    width: 100%;
+/* Office Hours section */
+.entry-content > *:nth-child(3),
+.entry-content > *:nth-child(4),
+.entry-content > *:nth-child(5) {
+    grid-column: 1;
+}
+
+/* === RIGHT SIDE (FORM) === */
+/* Form section (adjust numbers if needed) */
+.entry-content > *:nth-child(6),
+.entry-content > *:nth-child(7),
+.entry-content > *:nth-child(8),
+.entry-content > *:nth-child(9),
+.entry-content > *:nth-child(10) {
+    grid-column: 2;
+}
+
+/* Style the form box */
+.entry-content form {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
 }
 
-/* Force form section to sit right */
-.wp-block-group:has(form) > *:not(form) {
-    flex: 1;
+/* === BOTTOM SECTION === */
+/* Sponsors + External Links full width */
+.entry-content > *:nth-child(n+11) {
+    grid-column: span 2;
 }
 
-.wp-block-group:has(form) form {
-    flex: 1;
+/* Make bottom lists 2 columns */
+.entry-content > *:nth-child(n+11) ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* === BOTTOM LAYOUT (Sponsors + External Links) === */
-.wp-block-group:has(ul):has(a[href*="http"]) {
-    display: flex;
-    gap: 40px;
-}
-
-/* Each list column */
-.wp-block-group:has(ul):has(a[href*="http"]) ul {
-    flex: 1;
-}
-
-/* === FORM IMPROVEMENTS === */
+/* === FORM FIELDS === */
 input, textarea {
     width: 100%;
     margin-bottom: 15px;
 }
 
-/* Try to put name fields side by side */
-.wp-block-group form p:has(input) {
-    display: flex;
-    gap: 15px;
-}
-
-.wp-block-group form p input {
-    flex: 1;
-}
-
-/* === MOBILE FIX === */
+/* === MOBILE === */
 @media (max-width: 768px) {
-    .wp-block-group {
-        display: block !important;
+    .entry-content {
+        grid-template-columns: 1fr;
     }
 
-    .wp-block-group form p:has(input) {
-        flex-direction: column;
+    .entry-content > * {
+        grid-column: span 1 !important;
+    }
+
+    .entry-content > *:nth-child(n+11) ul {
+        grid-template-columns: 1fr;
     }
 }
