@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Lachlan Webb, Jack Lean, Ben Chisnell, Terry Keenan-Warland
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.4
+Version: 1.0.5
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1044,12 +1044,6 @@ textarea {
   min-width: 220px;
 }
 
-.footer-bottom {
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #bdbdbd;
-  text-align: center;
-}
 
 .site-footer {
   background: #012458;
@@ -1065,19 +1059,6 @@ textarea {
   color: #43A047;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 220px;
-}
 
 .footer-bottom {
   margin-top: 20px;
@@ -1108,17 +1089,24 @@ textarea {
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
+.screen-reader-text:focus {
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #111111;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }
 .screen-reader-text:focus {
   background-color: #ffffff;
