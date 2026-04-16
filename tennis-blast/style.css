@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Lachlan Webb, Jack Lean, Ben Chisnell, Terry Keenan-Warland
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.5
+Version: 1.0.6
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -405,14 +405,8 @@ textarea {
   line-height: 1.5;
 }
 
-h1 {
-  color: #333333;
-}
-
-h2 {
-  color: #333333;
-}
-  
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -536,13 +530,13 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #000000;
+  color: #0a8f2c;
 }
 a:visited {
-  color: #000000;
+  color: #0a8f2c;
 }
 a:hover, a:focus, a:active {
-  color: #000000;
+  color: #43A047;
 }
 a:focus {
   outline: thin dotted;
@@ -632,44 +626,9 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-
-.wp-block-columns {
-	display: flex;
-	gap: 20px;
-}
-
-.wp-block-column {
-	flex: 1;
-}
-
-.wp-block-group.is-layout-flex {
-	display: flex;
-	gap: 20px;
-}
-
-.wp-block-button__link {
-  margin-bottom: 5em;
-}
-
-.p {
-  margin-bottom: 3em;
-}
-
-.wp-block-columns {
-	display: flex;
-	gap: 40px;
-}
-
-.wp-block-column {
-	flex: 1;
-}
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
-
-
 /* Navigation
 --------------------------------------------- */
 /* =========================
@@ -697,7 +656,7 @@ textarea {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .main-navigation a:hover, .main-navigation a:focus {
-  color: #000000;
+  color: #0a8f2c;
   text-decoration: none;
 }
 .main-navigation {
@@ -732,7 +691,7 @@ textarea {
 .main-navigation .page_item_has_children:hover > a::after,
 .main-navigation .page_item_has_children:focus-within > a::after {
   transform: translateY(-50%) rotate(180deg);
-  color: #000000;
+  color: #0a8f2c;
 }
 .main-navigation {
   /* Dropdown menu */
@@ -742,7 +701,7 @@ textarea {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #009bd6;
+  background: #000000;
   border: 1px solid #bdbdbd;
   border-radius: 6px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -770,7 +729,7 @@ textarea {
   color: #ffffff;
 }
 .main-navigation ul ul a:hover, .main-navigation ul ul a:focus {
-  background: #000000;
+  background: #0a8f2c;
   color: #ffffff;
   text-decoration: none;
 }
@@ -792,7 +751,7 @@ textarea {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-  color: #000000;
+  color: #0a8f2c;
 }
 
 /* Mobile menu button */
@@ -883,14 +842,7 @@ textarea {
 }
 
 .page-content,
-
-.entry-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
+.entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
@@ -1012,28 +964,21 @@ textarea {
   background: #ffffff;
   border: 1px solid #bdbdbd;
   border-radius: 8px;
+  padding: 24px;
   margin-bottom: 24px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* Header
 --------------------------------------------- */
-
-.custom-header img {
-	width: 100%;
-	height: 600px;
-	object-fit: cover;
-	display: block;
-}
-
 /* =========================
    HEADER
 ========================= */
 .site-header {
-  background: #009bd6;
+  background: #000000;
   width: 100%;
   margin: 0;
-  padding: 10px;
+  padding: 15px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1049,18 +994,18 @@ textarea {
 }
 
 .site-title {
-  display:  none;
+  margin: 0;
 }
 
 .site-title a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   transition: color 0.2s ease;
 }
 .site-title a:hover, .site-title a:focus {
-  color: #000000;
+  color: #0a8f2c;
   text-decoration: none;
 }
 
@@ -1071,6 +1016,19 @@ textarea {
 
 /* Footer
 --------------------------------------------- */
+.site-footer {
+  background: #012458;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.site-footer a {
+  color: #0a8f2c;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #43A047;
+}
 
 .footer-container {
   max-width: 1200px;
@@ -1088,17 +1046,17 @@ textarea {
 
 
 .site-footer {
-  background: #009bd6;
+  background: #012458;
   color: #ffffff;
   padding: 40px 20px 20px;
 }
 
 .site-footer a {
-  color: #000000;
+  color: #0a8f2c;
   text-decoration: none;
 }
 .site-footer a:hover {
-  color: #000000;
+  color: #43A047;
 }
 
 
@@ -1200,15 +1158,3 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }/*# sourceMappingURL=style.css.map */
-
-.wp-block-table table,
-.wp-block-table th,
-.wp-block-table td {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-}
-
-.wp-block-table th,
-.wp-block-table td {
-    padding: 8px;
-}
