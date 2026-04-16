@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Lachlan Webb, Jack Lean, Ben Chisnell, Terry Keenan-Warland
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1022,33 +1022,64 @@ textarea {
   padding: 40px 20px 20px;
 }
 
-.site-footer a {
-  color: #000000;
-  text-decoration: none;
-}
-.site-footer a:hover {
-  color: #43A047;
-}
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .footer-column {
-  flex: 1;
-  min-width: 220px;
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+.footer-column h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.footer-column p {
+  margin: 0 0 10px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+.footer-column a {
+  color: #000000;
+  text-decoration: none;
+}
+.footer-column a:hover, .footer-column a:focus {
+  color: #000000;
+  text-decoration: underline;
 }
 
 .footer-bottom {
-  margin-top: 20px;
+  max-width: 1200px;
+  margin: 25px auto 0;
   padding-top: 15px;
-  border-top: 1px solid #bdbdbd;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-column {
+    min-width: 100%;
+  }
+}
+.footer-map {
+  width: 100%;
+  height: 120px;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* polish */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons
@@ -1082,33 +1113,64 @@ input[type=submit]:focus {
   padding: 40px 20px 20px;
 }
 
-.site-footer a {
-  color: #000000;
-  text-decoration: none;
-}
-.site-footer a:hover {
-  color: #43A047;
-}
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .footer-column {
-  flex: 1;
-  min-width: 220px;
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+.footer-column h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.footer-column p {
+  margin: 0 0 10px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+.footer-column a {
+  color: #000000;
+  text-decoration: none;
+}
+.footer-column a:hover, .footer-column a:focus {
+  color: #000000;
+  text-decoration: underline;
 }
 
 .footer-bottom {
-  margin-top: 20px;
+  max-width: 1200px;
+  margin: 25px auto 0;
   padding-top: 15px;
-  border-top: 1px solid #bdbdbd;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-column {
+    min-width: 100%;
+  }
+}
+.footer-map {
+  width: 100%;
+  height: 120px;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* polish */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*--------------------------------------------------------------
