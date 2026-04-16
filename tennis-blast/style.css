@@ -736,7 +736,7 @@ textarea {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #000000;
+  background: #009bd6;
   border: 1px solid #bdbdbd;
   border-radius: 6px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -1006,7 +1006,6 @@ textarea {
   background: #ffffff;
   border: 1px solid #bdbdbd;
   border-radius: 8px;
-  padding: 24px;
   margin-bottom: 24px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
