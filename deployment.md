@@ -41,7 +41,11 @@ Allow any popups
 ## How changes are made and committed
 Changes are developed locally using a WordPress environment managed through Local by Flywheel. All development work is done on the local-branch using Git version control.
 
-To make changes, developers update the theme files in the local environment and verify changes in the WordPress front-end
+To make changes, follow these steps:
+- Open the `tennis-blast` theme folder in Visual Studio Code
+- Make the required changes to the theme files
+- Refresh and test the changes in the local WordPress front-end to ensure they display correctly
+- Fix any issues if the changes do not appear as expected before proceeding
 
 Once changes are ready, they are committed and pushed to GitHub using the following commands:
 ```bash
