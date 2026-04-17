@@ -139,13 +139,21 @@ jobs:
 - No manual server file transfers required
 - All deployments are consitent and repeatable
 
+## Deployment to production
+
+
+## Integration of project management and communication tools
+The project used GitHub for version control and collaborative development. All code changes were managed through branches and pull requests, allowing team members to review and approve updates before merging into the main codebase. This ensured consistency and reduced conflicts during development.
+
+Trello was used as the primary project management tool to organise tasks and track progress. Tasks were created, assigned to team members, and moved through different stages such as “To Do,” “In Progress,” and “Done.” This provided clear visibility of project status and helped distribute workload evenly across the team.
+
+Communication was managed through Slack and a Discord group chat, which were used for day-to-day coordination, quick updates, and troubleshooting. In addition, scheduled team meetings were held on Discord outside of university sessions to discuss progress, resolve issues, and plan upcoming tasks.
+
+Overall, the combination of GitHub for development, Trello for task management, and Slack/Discord for communication ensured effective collaboration sithin the team.
+
 # Other
 
 Deployment to production
-
-
-
-Integration of project management and communication tools
 
 
 
