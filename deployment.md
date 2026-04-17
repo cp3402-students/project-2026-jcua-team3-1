@@ -70,11 +70,76 @@ Verify that there are no layout errors, missing elements, or console errors in t
 
 If there are any errors that are found, return to the `tennis-blast` themes folder in Visual Studio Code, make corrections,, and repeat the testing process locally before committing changes
 
+## Deployment to staging
+
+### 1. GitHub Repository Setup
+- Open the GitHub repository 
+- Go to Settings &rarr; Secrets and Variables &rarr; Actions
+- Add the required secrets:
+  - `GCP_HOST`: External IP address of the Google Cloud VM  
+  - `GCP_USER`: SSH username for the VM  
+  - `GCP_SSH_KEY`: Private SSH key for server access
+  - `GCP_PORT`: SSH port (default: 22)
+
+### 2. GitHub Actions Workflow Setup
+- Create a workflow file in the repository:
+  - `.github/workflows/deploy.yml`
+- Then add the following configuration:
+```yaml
+name: Deploy WordPress Theme to GCP
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository code
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Set up SSH access
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.GCP_HOST }} >> ~/.ssh/known_hosts
+
+      # 3. Deploy theme to staging server
+      - name: Deploy files to server
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_rsa" \
+            ./ \
+            ${{ secrets.GCP_USER }}@${{ secrets.GCP_HOST }}:/var/www/html/wp-content/themes/tennis-blast/
+```
+- Configure the workflow to run when changes are pushed to the staging branch
+- The workflow performs the following steps:
+  - Checks out the latest repository code
+  - Set up SSH access using GitHub Secrets
+  - Adds the staging server to known hosts
+  - Deploys files to the Google Cloud VM using `rsync`
+
+### 3. Automated Deployment Process
+- When changes are pushed to the `staging` branch:
+  - GitHub Actions automatically triggers the workflow
+  - The repository is cloned within the GitHub Actions environment
+  - SSH authentication is configured securely using secrets
+  - A secure connection is established to the staging server
+  - Files are synchronised to the server directory
+    - `/var/www/html/wp-content/themes/tennis-blast/`
+  - The staging website is updated to reflect the latest code
+
+### 4. Result
+- The staging server is automatically updated from the staging branch
+- No manual server file transfers required
+- All deployments are consitent and repeatable
+
 # Other
-
-Deployment to staging
-
-
 
 Deployment to production
 
