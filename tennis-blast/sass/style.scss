@@ -1,10 +1,10 @@
 /*!
 Theme Name: Tennis Blast
 Theme URI: http://underscores.me/
-Author: Lachlan Webb
+Author: Lachlan Webb, Jack Lean, Ben Chisnell, Terry Keenan-Warland
 Author URI: http://underscores.me/
 Description: Visual Appealing Theme
-Version: 1.0.0
+Version: 1.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -102,3 +102,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Layouts
+--------------------------------------------- */
+@import "layouts/layouts";

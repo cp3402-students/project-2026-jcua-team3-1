@@ -1,0 +1,45 @@
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+	background: $color__header;
+	width: 100%;
+	margin: 0;
+	padding: 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.site-title {
+	margin: 0;
+}
+
+.site-title a {
+	color: $color__text-screen;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	transition: color 0.2s ease;
+
+	&:hover,
+	&:focus {
+		color: $color__accent;
+		text-decoration: none;
+	}
+}
+
+.custom-logo {
+	max-height: 80px;
+	width: auto;
+}

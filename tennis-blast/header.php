@@ -26,6 +26,8 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tennis-blast' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		
+
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -56,4 +58,13 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
+
+<?php if ( is_front_page() && get_header_image() ) : ?>
+	<div class="custom-header">
+		<img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+	</div>
+<?php endif; ?>
+
+

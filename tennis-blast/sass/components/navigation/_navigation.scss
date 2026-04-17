@@ -1,95 +1,191 @@
+/* =========================
+   MAIN NAVIGATION
+========================= */
+
 .main-navigation {
-	display: block;
-	width: 100%;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
+		padding: 0;
 	}
 
 	li {
 		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
 	}
 
 	a {
 		display: block;
+		padding: 10px 14px;
+		color: $color__text-screen;
 		text-decoration: none;
+		transition: color 0.2s ease, background 0.2s ease;
+
+		&:hover,
+		&:focus {
+			color: $color__accent;
+			text-decoration: none;
+		}
 	}
 
+	/* Top-level menu only */
+	> div > ul,
+	> ul {
+		display: none;
+		align-items: center;
+		gap: 30px;
+	}
+
+	/* Dropdown arrow */
+	.menu-item-has-children > a,
+	.page_item_has_children > a {
+		position: relative;
+		padding-right: 26px;
+
+		&::after {
+			content: "▼";
+			font-size: 0.65rem;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: transform 0.2s ease, color 0.2s ease;
+		}
+	}
+
+	.menu-item-has-children:hover > a::after,
+	.menu-item-has-children:focus-within > a::after,
+	.page_item_has_children:hover > a::after,
+	.page_item_has_children:focus-within > a::after {
+		transform: translateY(-50%) rotate(180deg);
+		color: $color__accent;
+	}
+
+	/* Dropdown menu */
+	ul ul {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 220px;
+		background: $color__header;
+		border: 1px solid $color__border-input;
+		border-radius: 6px;
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+		padding: 8px 0;
+		z-index: 99999;
+
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		align-items: stretch;
+
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(8px);
+		transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+		pointer-events: none;
+	}
+
+	ul ul li {
+		width: 100%;
+		display: block;
+	}
+
+	ul ul a {
+		display: block;
+		width: 100%;
+		padding: 10px 16px;
+		white-space: nowrap;
+		color: $color__text-screen;
+
+		&:hover,
+		&:focus {
+			background: $color__accent;
+			color: #ffffff;
+			text-decoration: none;
+		}
+	}
+
+	/* Show dropdown */
+	li:hover > ul,
+	li.focus > ul,
+	li:focus-within > ul {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	/* Current item */
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $color__accent;
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+/* Mobile menu button */
+.menu-toggle {
 	display: block;
+	background: $color__accent;
+	color: #ffffff;
+	border: 1px solid $color__accent;
+	padding: 10px 14px;
+	border-radius: 6px;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		background: $color__accent-hover;
+		border-color: $color__accent-hover;
+	}
+}
+
+/* Small screens */
+.main-navigation.toggled > div > ul,
+.main-navigation.toggled > ul {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.main-navigation.toggled li {
+	width: 100%;
+}
+
+.main-navigation.toggled ul ul {
+	position: static;
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	padding-left: 15px;
+	background: transparent;
+	pointer-events: auto;
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
 
-	.main-navigation ul {
+	.main-navigation > div > ul,
+	.main-navigation > ul {
 		display: flex;
 	}
 }
 
+/* Post and comment navigation */
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 	}

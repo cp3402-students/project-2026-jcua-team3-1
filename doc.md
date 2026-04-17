@@ -5,6 +5,11 @@
 ### 1.1 Purpose
 This document presents detailed technical information to support the redevelopment of the Tennis Blast website. It functions as a reference for administrators, developers and future maintainers involved in the website’s ongoing management and evolution.
 
+### 1.2 Scope
+This document covers the following areas:
+- Cloud infrastructure hosted on Amazon Web Services (AWS)
+- WordPress deployment on AWS LightSail
+- GitHub synchronization
 
 ### 1.3 Intended Audience
 - System Administrators  
@@ -13,12 +18,14 @@ This document presents detailed technical information to support the redevelopme
 
 ### 1.4 Technologies Used
 
-| Component           | Technology             |
+| Component            | Technology              |
 |---------------------|------------------------|
 | Cloud Hosting       | AWS LightSail          |
 | Operating System    | Linux (Bitnami Stack)  |
 | Web Server          | Apache                 |
 | Programming Language| PHP, HTML, CSS, SCSS   |
+
+
 
 
 
@@ -42,6 +49,7 @@ This document presents detailed technical information to support the redevelopme
 
 
 
+
 ### 2.2 Network and Security
 
 | Port | Protocol | Service       | Access Level | Description            |
@@ -49,6 +57,9 @@ This document presents detailed technical information to support the redevelopme
 | 22   | SSH      | Secure Shell  | Restricted   | Remote administration  |
 | 80   | HTTP     | Web Traffic   | Public       | Non-secure access      |
 | 443  | HTTPS    | Secure Web    | Public       | Encrypted SSL/TLS      |
+
+
+
 
 
 
@@ -62,6 +73,10 @@ This document presents detailed technical information to support the redevelopme
 **Plugins Used:**
 - All-in-One WP Migration – Full backups  
 - Accessibility Widget by OneTap  
+
+
+
+
 
 
 
