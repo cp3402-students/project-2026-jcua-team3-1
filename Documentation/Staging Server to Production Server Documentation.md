@@ -11,7 +11,7 @@ On the staging site, the All-in-One WP Migration plugin was installed and activa
 On the production server, a new WordPress installation was set up. The same All-in-One WP Migration plugin was installed and activated to ensure the production server was compatible with the exported backup file.
 
 ### Step 3: Import to Production Server
-Using the plugin's import feature, the previously downloaded backup file was uploaded to the production server. The plugin automatically replaced content on the staging server.
+Using the plugin's import feature, the previously downloaded backup file was uploaded to the production server. The plugin automatically replaced content on the production server.
 
 ### Step 4: Final Verification
 After the import completed, the WordPress site was checked to ensure all pages, media and theme settings were correctly transferred. 
@@ -24,12 +24,12 @@ The website was deployed from the staging server to the production server using 
 Changes made on the staging server were committed and pushed directly to the main branch on GitHub, so the GitHub repository contained the latest version of the website and was ready for deployment to the production server.
 
 ### Step 2: Automated Workflow Trigger
-A GitHub Actions workflow was configured to automatically trigger when changes weer pushed to the main branch. This workflow shows the steps need to automatically deploy the updated website to the production server. 
+A GitHub Actions workflow was configured to automatically trigger when changes were pushed to the main branch. This workflow shows the steps needed to automatically deploy the updated website to the production server. 
 
 ### Step 3: Repository Variables and Secrets
-Sensitive information such as server credentials and deployment plaths were securely stored using GitHub repository secrets and variables. These were accessed during the workflow to securely connect to the production server.
+Sensitive information such as server credentials and deployment paths were securely stored using GitHub repository secrets and variables. These were accessed during the workflow to securely connect to the production server.
 
-### Step 4: Automated deployment to Production Sever
+### Step 4: Automated deployment to Production Server
 The workflow automatically transferred the latest code from the main branch to the production server, updating the live production WordPress site to match the most recent changes made in the repository.
 
 ### Step 5: Deployment Verification
