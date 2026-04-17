@@ -1336,11 +1336,10 @@ input[type=submit]:focus {
 
 /* ===== IMAGE (RIGHT SIDE DESKTOP LAYOUT) ===== */
 .wp-block-image {
-  float: right;
-  max-width: 420px;
-  margin: 10px 0 20px 24px;
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0 10px 1px;
   background: #ffffff;
-  padding: 10px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
