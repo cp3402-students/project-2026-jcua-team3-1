@@ -141,6 +141,49 @@ jobs:
 
 ## Deployment to production
 
+### Deployment Process: Staging Server to Production Server (GitHub Automated Deployment)
+The website was deployed from the staging server to the production server using an automated delpoyment process with GitHub Actions. This process used GitHub Actions and repository variables to automatically build and deploy the latest version of the code from the main branch to the production server.
+
+#### Step 1: Commit and Push from Staging Server
+Changes made on the staging server were committed and pushed directly to the main branch on GitHub, so the GitHub repository contained the latest version of the website and was ready for deployment to the production server.
+
+#### Step 2: Automated Workflow Trigger
+A GitHub Actions workflow was configured to automatically trigger when changes were pushed to the main branch. This workflow shows the steps needed to automatically deploy the updated website to the production server. 
+
+#### Step 3: Repository Variables and Secrets
+Sensitive information such as server credentials and deployment paths were securely stored using GitHub repository secrets and variables. These were accessed during the workflow to securely connect to the production server.
+
+#### Step 4: Automated deployment to Production Server
+The workflow automatically transferred the latest code from the main branch to the production server, updating the live production WordPress site to match the most recent changes made in the repository.
+
+#### Step 5: Deployment Verification
+After deployment, the production site was reviewed to confirm that the latest changes had been successfully applied and that all features were functioning correctly.
+
+### Deployment Process: Staging Server to Production Server (All-in-One WP Migration)
+
+The website was migrated from the staging server to the production server using the All-in-One WP Migration plugin. This process ensured that all website content, themes, plugins, and settings were transferred correctly
+
+#### Step 1: Export from Staging Server
+On the staging site, the All-in-One WP Migration plugin was installed and activated. The export tool was used to create a full backup of the WordPress site, including the media files, themes, and plugins. The export file was downloaded locally once the process was completed
+
+#### Step 2: Prepare Production Server
+On the production server, a new WordPress installation was set up. The same All-in-One WP Migration plugin was installed and activated to ensure the production server was compatible with the exported backup file.
+
+#### Step 3: Import to Production Server
+Using the plugin's import feature, the previously downloaded backup file was uploaded to the production server. The plugin automatically replaced content on the production server.
+
+#### Step 4: Final Verification
+After the import completed, the WordPress site was checked to ensure all pages, media and theme settings were correctly transferred. 
+
+
+
+
+
+
+
+
+
+
 
 ## Integration of project management and communication tools
 The project used GitHub for version control and collaborative development. All code changes were managed through branches and pull requests, allowing team members to review and approve updates before merging into the main codebase. This ensured consistency and reduced conflicts during development.
@@ -150,11 +193,3 @@ Trello was used as the primary project management tool to organise tasks and tra
 Communication was managed through Slack and a Discord group chat, which were used for day-to-day coordination, quick updates, and troubleshooting. In addition, scheduled team meetings were held on Discord outside of university sessions to discuss progress, resolve issues, and plan upcoming tasks.
 
 Overall, the combination of GitHub for development, Trello for task management, and Slack/Discord for communication ensured effective collaboration sithin the team.
-
-# Other
-
-Deployment to production
-
-
-
-Do not reproduce official WordPress or Docker documentation.
