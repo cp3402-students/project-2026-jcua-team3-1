@@ -139,8 +139,6 @@ jobs:
 - No manual server file transfers required
 - All deployments are consitent and repeatable
 
-## Deployment to production
-
 ## Deployment Process: Staging Server to Production Server (GitHub Automated Deployment)
 
 The production environment is updated from the approved version of the code stored in the GitHub repository. Once changes are finalised and merged into the `main` branch, an automated GitHub Actions workflow is triggered to deploy the latest version of the website to the production server.
@@ -148,17 +146,56 @@ The production environment is updated from the approved version of the code stor
 ### Step 1: Code Finalisation and Merge
 Changes are developed and tested in the local and staging environments. Once approved, they are merged into the `main` branch of the GitHub repository. The `main` branch represents the production-ready version of the project.
 
-### Step 2: Automated Workflow Trigger
-A GitHub Actions workflow is configured to automatically run when changes are pushed to the `main` branch. This workflow handles the deployment process without requiring manual server access.
+### Step 2: Production Deployment Setup (GitHub Actions Integration)
+Automated deployment to the production server was configured using GitHub Actions and AWS LightSail. This ensures that the live website is updated directly from the `main` branch.
 
-### Step 3: Secure Access to Production Server
-The workflow uses GitHub Secrets and Variables to securely authenticate with the production server. This ensures that sensitive information such as SSH credentials is not exposed in the repository.
+The production server details were retrieved from AWS LightSail, including the server IP address and SSH credentials. These were securely stored in GitHub under **Settings → Secrets and Variables → Actions**.
+
+The following repository secrets were configured:
+- `LIGHTSAIL_HOST` &rarr; LightSail server IP address  
+- `LIGHTSAIL_USER` &rarr; SSH username for the production server  
+- `LIGHTSAIL_SSH_KEY` &rarr; Private SSH key for authentication  
+
+A GitHub Actions workflow file (`deploy.yml`) was created to manage deployment. This workflow connects to the production server via SSH and executes deployment commands to update the live WordPress theme directory.
+
+### Step 3: GitHub Actions Workflow Execution
+When changes are pushed or merged into the `main` branch, the GitHub Actions workflow is automatically triggered. The workflow establishes a secure SSH connection to the production server using the stored secrets.
 
 ### Step 4: Deployment to Production Server
-The workflow transfers the latest version of the code from the GitHub repository to the production server. This updates the live WordPress website to reflect the most recent approved changes.
+The workflow navigates to the WordPress theme directory on the production server:
+`/opt/bitnami/wordpress/wp-content/themes/tennis-club`
+
+It then updates the site by pulling the latest changes from the `main` branch of the GitHub repository, ensuring the live environment remains synchronised with the approved codebase.
 
 ### Step 5: Deployment Verification
-After deployment, the production site is reviewed to ensure all changes have been applied correctly and that the website is functioning as expected.
+After deployment, the production site is reviewed to confirm that all updates have been applied correctly and that the website is functioning as expected.
+
+### GitHub Actions Workflow File (`deploy.yml`)
+
+```yaml
+name: Deploy to LightSail
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Lightsail via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            cd /opt/bitnami/wordpress/wp-content/themes/tennis-club
+            git pull origin main
+
+            sudo chown -R bitnami:daemon /opt/bitnami/wordpress/wp-content/themes/tennis-club
+```
 
 ### Deployment Process: Staging Server to Production Server (All-in-One WP Migration)
 
