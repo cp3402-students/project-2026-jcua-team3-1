@@ -31,7 +31,7 @@ You may encounter an error where it says it will overright some files. Ignore it
 
 Use preferred enviroment
 
-set both wordpress username and password to <code>user</code>
+Set both wordpress username and password to <code>user</code>
 
 finish creating the site.
 
@@ -57,11 +57,20 @@ git push origin local-branch
 This ensures all updates are tracked and shared with the team through the central repository
 
 
+## How changes are tested
+Open the local WordPress sit running in Local by Flywheel
+
+Go to the relevant page or feature in the front-end that has been changed
+
+Refresh the page after making changes in the theme files to load the latest version
+
+Check that the layout, styling and functionality match the anticipated design
+
+Verify that there are no layout errors, missing elements, or console errors in the brower
+
+If there are any errors that are found, return to the `tennis-blast` themes folder in Visual Studio Code, make corrections,, and repeat the testing process locally before committing changes
+
 # Other
-
-How changes are tested
-
-
 
 Deployment to staging
 
