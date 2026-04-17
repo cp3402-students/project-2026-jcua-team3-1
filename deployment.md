@@ -31,22 +31,46 @@ You may encounter an error where it says it will overright some files. Ignore it
 
 Use preferred enviroment
 
-set both wordpress username and password to <code>user</code>
+Set both wordpress username and password to <code>user</code>
 
 finish creating the site.
 
 Allow any popups
 
 
+## How changes are made and committed
+Changes are developed locally using a WordPress environment managed through Local by Flywheel. All development work is done on the local-branch using Git version control.
+
+To make changes, follow these steps:
+- Open the `tennis-blast` theme folder in Visual Studio Code
+- Make the required changes to the theme files
+- Refresh and test the changes in the local WordPress front-end to ensure they display correctly
+- Fix any issues if the changes do not appear as expected before proceeding
+
+Once changes are ready, they are committed and pushed to GitHub using the following commands:
+```bash
+git status
+git add tennis-blast/
+git commit -m "Describe the changes made"
+git push origin local-branch
+```
+This ensures all updates are tracked and shared with the team through the central repository
+
+
+## How changes are tested
+Open the local WordPress sit running in Local by Flywheel
+
+Go to the relevant page or feature in the front-end that has been changed
+
+Refresh the page after making changes in the theme files to load the latest version
+
+Check that the layout, styling and functionality match the anticipated design
+
+Verify that there are no layout errors, missing elements, or console errors in the brower
+
+If there are any errors that are found, return to the `tennis-blast` themes folder in Visual Studio Code, make corrections,, and repeat the testing process locally before committing changes
+
 # Other
-
-How changes are made and committed
-
-
-
-How changes are tested
-
-
 
 Deployment to staging
 

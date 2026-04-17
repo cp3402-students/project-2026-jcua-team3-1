@@ -18,7 +18,7 @@ For a detailed breakdown of how the theme is structured and implemented, see the
 
 - **Jack Lean**  
   GitHub: https://github.com/Jack-Lean-1404  
-  LinkedIn: xxx  
+  LinkedIn: https://www.linkedin.com/in/jack-lean-0a5056321/ 
 
 - **Lachlan Webb**  
   GitHub: https://github.com/Webby04  
