@@ -38,11 +38,22 @@ finish creating the site.
 Allow any popups
 
 
+## How changes are made and committed
+Changes are developed locally using a WordPress environment managed through Local by Flywheel. All development work is done on the local-branch using Git version control.
+
+To make changes, developers update the theme files in the local environment and verify changes in the WordPress front-end
+
+Once changes are ready, they are committed and pushed to GitHub using the following commands:
+```bash
+git status
+git add tennis-blast/
+git commit -m "Describe the changes made"
+git push origin local-branch
+```
+This ensures all updates are tracked and shared with the team through the central repository
+
+
 # Other
-
-How changes are made and committed
-
-
 
 How changes are tested
 
