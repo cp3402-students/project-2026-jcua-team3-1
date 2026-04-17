@@ -469,7 +469,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #f9f9f9;
+  background: #FF0000 !important;
 }
 
 hr {
